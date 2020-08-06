@@ -15,6 +15,13 @@ def piechart(classification):
     df_for_piechart.plot.pie(y='嬰兒出生數')
     plt.show()
 
+
+def barplot(classification):
+    df_for_barplot = df.groupby(classification).sum()
+    df_for_barplot(kind='bar')
+    plt.show()
+
+
 if __name__ == '__main__':
 
     print(matplotlib.__file__)
@@ -48,10 +55,6 @@ if __name__ == '__main__':
         # 上面是沒改過的，可以把圖改成function+subplots
 
 
-        def barplot(classification):
-            df_for_barplot = df.groupby(classification).sum()
-            df_for_barplot(kind='bar')
-            plt.show()
 
 
         piechart('生母教育程度')
